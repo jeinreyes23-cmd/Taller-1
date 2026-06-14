@@ -1,0 +1,58 @@
+# Crear tupla de producto y tuplas de tuplas
+inventario=(
+    ("Laptop",1000000,10),
+    ("monitores",100000,12),
+    ("cpu",2500000,8),
+    ("teclados",100000,9),
+    ("mouse",50000,20),
+    ("microfonos",75000,20),
+    ("camaras",180000,13),
+    ("bafles",120000,25),
+    ("memoria_ram",1500000,20),
+    ("impresoras",2000000,5)
+)
+producto = ("Laptop",1000000,10)
+monitores = ("monitores",100000,12)
+cpu = ("cpu",2500000,8)
+teclados = ("teclados",100000,9)
+mouse = ("mouse",50000,20)
+microfonos = ("microfonos",75000,20)
+camaras = ("camaras",180000,13)
+bafles = ("bafles",120000,25)
+memoria_ram = ("memoria_ram",1500000,20)
+impresoras = ("impresoras",2000000,5)
+
+
+buscar=input("Ingrese el nombre del producto que desea buscar: ")
+for producto, precio,cantidad in inventario:
+    if producto== buscar:
+        print("Producto:",producto)
+        print("Precio:",precio)
+        break
+
+    else: 
+        print("Producto no encontrado.")
+
+
+        # para saber cuanto tengo cada tupla 
+        for producto in inventario:
+            print(producto)
+
+            for registro in inventario:
+                print(registro[0], registro[1], registro[2])
+
+
+print("{:<15} {:>12} {:>10} {:>15}".format(
+    "producto", "precio", "cantidad", "total"
+))
+print("-" * 60)
+
+for producto, precio, cantidad in inventario:
+    total = precio * cantidad
+
+    print("{:<15} {:>12,} {:>10} {:>15,}".format(
+        producto,
+        precio,
+        cantidad,
+        total
+    ))

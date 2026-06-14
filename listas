@@ -1,0 +1,89 @@
+# listas
+
+# Ejemplo de uso de listas en Python
+tecnology = ['monitores ','mouse','microfonos','impresoras ','teclados']
+precios = [100000, 50000, 75000, 2000000, 150000]
+cantidades = [10, 20, 15, 5, 8]
+
+print('Lista original:', tecnology )
+print('Precios:', precios)
+print('Cantidades:', cantidades)
+
+# Agregar un elemento
+tecnology .append('parlantes ')
+precios.append(120000)
+cantidades.append(15)
+print('Después de append:', tecnology )
+print('Precios actualizados:', precios)
+
+# Insertar en una posición específica
+tecnology .insert(1,'camaras')
+precios.insert(1, 180000)
+cantidades.insert(1, 25)
+print('Después de insert:', tecnology )
+
+# Acceder por índice
+print('Primer elemento:', tecnology [0])
+
+# Recorrer la lista
+for tecnologia in tecnology :
+    print('tecnology:', tecnology)
+
+# Longitud de la lista
+print('Número de tecnologías:', len(tecnology))
+
+# el nombre del producto con menor precio
+min_precio = min(precios)
+indice_min = precios.index(min_precio)
+print('Producto con menor precio:', tecnology[indice_min])
+
+# numero de producto mayor precio
+max_precio =max(precios)
+posicion_max = precios.index(max_precio)
+print('Producto con mayor precio:', tecnology[posicion_max])
+
+# como averiguar precio camara
+indice_camara = tecnology.index('camaras')
+print('Precio de la cámara:', precios[indice_camara])
+
+#el top 3 productos más caros
+precios_ordenados = sorted(precios, reverse=True)
+
+print('Top 3 productos más caros:')
+for i in range(3):
+    precio = precios_ordenados[i]
+    indice = precios.index(precio)
+    print(f'{tecnology[indice]}: {precio}')
+
+    i = 0
+
+while i < 5:
+    print(f'{tecnology[i]}: {precios[i]}')
+    i += 1
+
+# Datos
+for producto, precio in zip(tecnology, precios):
+    print("{:<15} {:>12}".format(producto, precio))
+
+def mostrar_tabla(productos):
+    print("{:<15} {:>10} {:>10}".format(
+        "Producto", "Precio", "Cantidad"
+    ))
+
+    for p in productos:
+        print("{:<15} {:>10} {:>10}".format(
+            p["nombre"],
+            p["precio"],
+            p["cantidad"]
+        ))
+# buscar producto 
+
+buscar_producto=input("ingrese el nombre del producto a buscar")
+for p in producto:
+    if p["nombre"] == buscar_producto:
+        print(p["nombre"])
+        print(p["precio"])
+        print(p["cantidad"])
+        break
+else:
+    print("Producto no encontrado")

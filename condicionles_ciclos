@@ -1,0 +1,46 @@
+try:
+    nombre = input("Ingrese su nombre: ")
+    a = int(input("Ingrese un numero: "))
+
+    if a > 20:
+
+        print(f"Hola {nombre}")
+        print("El numero es aceptado")
+        print("Puedes continuar con el proceso")
+
+        solicitudes = [
+            "Vacaciones",
+            "Quejas y Reclamos",
+            "Certificado Laboral",
+            "Permiso no remunerado",
+            "Otros"
+        ]
+
+        print("\nSeleccione una solicitud:")
+
+        for i, solicitud in enumerate(solicitudes, start=1):
+            print(f"{i}. {solicitud}")
+
+        opcion = int(input("Ingrese el número de la opción: "))
+
+        if 1 <= opcion <= len(solicitudes):
+            print("Solicitud seleccionada:", solicitudes[opcion - 1])
+            print("Gracias por su solicitud, será procesada pronto.")
+            print("te informo")
+            print("la notificación sera enviada por correo electrónico dentro de los tres dias habiles")
+            
+        else:
+            print("Opción no válida")
+
+    elif a == 0:
+        print("Digite de nuevo el numero")
+        print("El numero no puede ser 0")
+
+    else:
+        print("El numero no es aceptado")
+        print("El numero debe ser mayor a 20")
+        print("No podras ingresar al proceso")
+
+except ValueError:
+    print("Error: Debes ingresar un numero valido")
+

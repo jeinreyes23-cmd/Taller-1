@@ -1,0 +1,64 @@
+def calcular_ingreso(precio, cantidad):
+
+    try:
+        total = precio * cantidad
+        return total
+
+    except TypeError:
+        print("Error: Los valores deben ser numéricos")
+        return 0
+
+
+# Lista para guardar ventas
+registro_ventas = []
+
+# Cantidad de ventas a registrar
+cantidad_ventas = int(input("¿Cuántas ventas desea registrar? "))
+
+for i in range(cantidad_ventas):
+
+    print(f"\nVenta #{i+1}")
+
+    producto = input("Producto: ")
+    precio = float(input("Precio: "))
+    cantidad = int(input("Cantidad: "))
+
+    total = calcular_ingreso(precio, cantidad)
+
+    venta = {
+        "producto": producto,
+        "precio": precio,
+        "cantidad": cantidad,
+        "total": total
+    }
+
+    registro_ventas.append(venta)
+
+# Reporte final
+print("\nREPORTE DE VENTAS")
+print("{:<15}{:<15}{:<18}".format(
+    "PRODUCTO",
+    "TOTAL",
+    "TOTAL DESCUENTO"
+))
+print("-" * 50)
+
+for venta in registro_ventas:
+
+    total_original = venta["total"]
+
+    if total_original > 100000:
+        total_descuento = total_original * 0.90
+    else:
+        total_descuento = total_original
+
+    print("{:<15}{:<15,.0f}{:<18,.0f}".format(
+        venta["producto"],
+        total_original,
+        total_descuento
+    ))
+
+# Prueba de error
+print("\nPRUEBA DE MANEJO DE ERRORES")
+resultado = calcular_ingreso("texto", 5)
+print("Resultado:", resultado)

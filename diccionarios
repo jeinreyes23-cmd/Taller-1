@@ -1,0 +1,39 @@
+# Ejemplo de diccionario y conjunto en Python
+
+# crear_datos():
+from numpy import rint
+
+
+datos= {
+        "nombre": "¨janet",
+        "edad": 28,
+        "ciudad":"bogota"
+
+    }
+   
+print(("nombre",datos["nombre"]))
+print(("edad",datos["edad"]))
+print(("ciudad",datos["ciudad"]))
+
+# agregar elementos al diccionario 
+datos["profesion"] = "Ingeniera"
+print(("profesion",datos["profesion"]))
+datos["teléfono"] = ["31354236"]
+print(("teléfono",datos["teléfono"]))
+datos["correo"] = "janet@example.com"
+print(("correo",datos["correo"]))
+
+
+#  modificar elementos existente
+datos["telefono "] = "3134454236"
+print(("telefono ",datos["telefono "]))
+print("Datos actualizados:", datos)
+
+
+print("\n{:<15} {:<30}".format("CAMPO", "VALOR"))
+print("-" * 45)
+
+for clave, valor in datos.items():
+    print("{:<15} {:<30}".format(clave, str(valor)))
+
+    
