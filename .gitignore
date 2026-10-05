@@ -1,0 +1,13 @@
+﻿cart_insight_supermarket_2025_profit_tax.csv
+
+*.csv
+*.xlsx
+*.xls
+
+__pycache__/
+.ipynb_checkpoints/
+
+modelos/*.pkl
+modelos/*.joblib
+modelos/*.h5
+modelos/*.keras
